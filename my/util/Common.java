@@ -87,7 +87,7 @@ public class Common{
 			System.out.print(msg+delimiter);
 	}
 	public static int input(String msg){
-		print(msg);
+		print(msg,"");
 		int n=new java.util.Scanner(System.in).nextInt();
 		return n;
 	}
@@ -100,5 +100,20 @@ public class Common{
 		print(msg,"");
 		String str=new java.util.Scanner(System.in).nextLine();
 		return str;
+	}
+	public static void selectionSort(int[] arr){
+		for(int i=0;i<arr.length-1;i++){
+			int index=i;
+			for(int j=i+1;j<arr.length;j++){
+				if(arr[index]>arr[j]){
+					index=j;
+				}
+			}
+			if(index!=i){
+				int temp=arr[i];
+				arr[i]=arr[index];
+				arr[index]=temp;
+			}
+		}
 	}
 }
